@@ -1,0 +1,45 @@
+1. GET INPUT FROM THE USER
+  name= input("name:")
+  dept=input("dept:")
+  print("my name is:")
+  print("my dept is:")
+
+  output
+  name:mithra
+  dept:EEE
+  my name is:mithra R
+  my dept is:EEE
+
+2.IF ELSE CONDITIONAL STATEMENTS
+    income=int(input("income:"))
+    if(income<7000):
+       print("scholarship is available")
+    else:
+       print("not eligible for scholarship")
+
+  output
+  income:8000
+  not eligible for scholarship
+
+3.USING OPERATORS AND VARIABLES
+    a=int(input())
+    b=int(input())
+    print("Addition:",a+b)  
+    print("Subraction:",a-b)
+    print("Multiply:",a*b)
+    print("Division:",a/b)
+    print("Reminder:",a%b)
+
+  output
+    10
+    5
+    Addition:15  
+    Subraction:10
+    Multiply:50
+    Division:2
+    Reminder:0
+    
+output
+    10
+    5
+    
