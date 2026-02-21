@@ -50,7 +50,7 @@ B:5
 add/sub/mul/div:sub
 10
 
-4.ELIGIBLE FOR LOAN OR NOT USING BINARY OPERATOR
+4.ELIGIBLE FOR LOAN OR NOT USING NESTED LOOP
 salary=int(input("salary:")
 age=int(input("age:")
 if(salary>=20000 or age>=25):
