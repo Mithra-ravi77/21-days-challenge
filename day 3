@@ -15,9 +15,56 @@
       print("poor student")
     elif(score>35 and score<70):
       print("average student")
-    else(score>700):
+    elif(score>700):
       print("good student")
+    else:
+      print("invalid score")
 
   output
   score:65
   average student
+
+3.MINI CALCULATOR
+a=int(input("A:"))
+b=int(input("B:"))
+operation=input("add/sub/mul/div:")
+if operation=="add"
+   print(a+b)
+elif (operation=="sub"):
+   print(a-b)
+elif (operation=="mul"):
+   print(a*b)
+elif (operation=="div"):
+   print(a/b)
+else:
+   print("invalid operator")
+
+output
+A:10
+B:5
+add/sub/mul/div:add
+15
+
+A:10
+B:5
+add/sub/mul/div:sub
+10
+
+4.ELIGIBLE FOR LOAN OR NOT USING BINARY OPERATOR
+salary=int(input("salary:")
+age=int(input("age:")
+if(salary>=20000 or age>=25):
+   loan=int(input("loan:"))
+    if (loan<=50000):
+        print("eligble for loan")
+    else:
+        print("maximum value is 50000")
+else:
+   print("you are not eligible for loan:")
+
+output
+salary:30000
+age:25
+loan:50000
+you are eligible for loan
+  
