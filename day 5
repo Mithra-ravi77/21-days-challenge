@@ -1,0 +1,96 @@
+1.in empty list , fill the number from the user and add the numbers
+a=[]
+print("enter 10 num")
+for i in range(10):
+  num=int(input("enter num"+str(i+1)+":"))
+  a.append(num)
+print(a)
+sum=0
+for i in a:
+ sum=sum+i
+print(sum)
+
+output
+enter 10 num
+enter num1:10
+enter num2:20
+enter num3:30
+enter num4:40
+enter num5:50
+enter num6:60
+enter num7:70
+enter num8:80
+enter num9:90
+enter num10:100
+[10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+550
+
+2. sort and reverse the list
+ numbers = [4, 2, 6, 5, 1, 3]
+numbers.sort() 
+print(f"\nSorted numbers list: {numbers}")
+numbers.reverse() 
+print(f"Reversed numbers list: {numbers}")
+
+  output
+  Sorted numbers list: [1, 2, 3, 4, 5, 6]
+  Reversed numbers list: [6, 5, 4, 3, 2, 1]
+
+3.add two matrix using nested for loop
+  A = [[1, 2], [3, 4]]
+B = [[5, 6], [7, 8]]
+
+result = [[0, 0], [0, 0]]
+
+for i in range(len(A)):
+    for j in range(len(A[0])):
+        result[i][j] = A[i][j] + B[i][j]
+
+print(result)
+
+  output
+  [[6, 8], [10, 12]]
+  
+  
+  4.pattern printing
+rows = 5
+for i in range(1, rows + 1):
+    for j in range(i):
+        print("*", end="")
+print()
+
+  output
+  *
+  **
+  ***
+  ****
+  *****
+
+  5.removing elements
+items = ["pen", "book", "eraser"]
+items.remove("book")
+last = items.pop()
+print(items)
+
+ output
+  ['pen']
+
+6.adding elements
+fruits = ["apple", "banana"]
+fruits.append("orange")
+fruits.insert(1, "mango")
+print(fruits)
+  
+  output
+  ['apple', 'mango', 'banana', 'orange']
+
+ 7.2D list
+  matrix =
+  [[1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]]
+print(matrix[1][2])  
+
+  output
+  6
+  
