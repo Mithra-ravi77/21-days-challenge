@@ -1,0 +1,98 @@
+1.FUNCTION CALL PROBLEMS
+def add():
+    print("Addition")
+    a=int(input("enter a:"))
+    b=int(input("enter b:"))
+    print(a+b)
+add()
+def sub():
+    print("Subraction")
+    a=int(input("enter a:"))
+    b=int(input("enter b:"))
+    print(a-b)
+sub()
+def mul():
+    print("Multiplication")
+    a=int(input("enter a:"))
+    b=int(input("enter b:"))
+    print(a*b)
+mul()
+def div():
+    print("Division")
+    a=int(input("enter a:"))
+    b=int(input("enter b:"))
+    print(a/b)
+div()
+
+OUTPUT
+      Addition
+enter a:30
+enter b:10
+40
+Subraction
+enter a:30
+enter b:5
+25
+Multiplication
+enter a:10
+enter b:6
+60
+Division
+enter a:40
+enter b:2
+20.0
+
+2.find even or odd (call the values)
+  def evenorodd(num):
+    if(num%2==0):
+        print("Even number")
+    else:
+        print("odd number")
+a=int(input("Enter the value:"))
+evenorodd(a)
+
+output
+  Enter the value:10
+  Even number
+
+  Enter the value:5
+  odd number
+
+3.pass or fail
+    def failorpass(mark):
+    if(mark>=35):
+        print("Pass")
+    else:
+        print("Fail")
+a=int(input("Enter the mark:"))
+failorpass(a)
+
+output
+      Enter the mark:70
+      Pass
+
+      Enter the mark:20
+      Fail
+
+4.range problem
+  def printrange(r1,r2):
+   for i in range(r1,r2):
+      print(i)
+  a=int(input(" Enter range r1:"))
+  b=int(input(" Enter range r2:"))
+  printrange(a,b)
+
+  output
+Enter range r1:21
+Enter range r2:31
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+
