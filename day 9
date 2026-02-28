@@ -1,0 +1,95 @@
+TYPES OF CLASS VARIABLE
+
+1.REGULAR CLASS VARIABLE
+class Laptop:
+    brand = "Dell"
+
+    def __init__(self, model):
+        self.model = model
+
+
+l1 = Laptop("Inspiron")
+l2 = Laptop("XPS")
+
+print(l1.brand)
+print(l2.brand)
+
+OUTPUT
+Dell
+Dell
+
+2.CHANGING CLASS VARIABLE USING CLASS NAME
+class Mobile:
+company = "Samsung"
+ def __init__(self, model):
+   self.model = model
+
+
+m1 = Mobile("Galaxy S21")
+m2 = Mobile("Galaxy A50")
+
+Mobile.company = "Apple"
+
+print(m1.company)
+print(m2.company)
+
+OUTPUT
+Apple
+Apple
+
+3.Instance Variable Overriding Class Variable
+class Bike:
+    wheels = 2
+
+    def __init__(self, name):
+        self.name = name
+
+
+b1 = Bike("Yamaha")
+b2 = Bike("Honda")
+
+b1.wheels = 3   
+
+print(b1.wheels)
+print(b2.wheels)
+print(Bike.wheels)
+
+OUTPUT
+3
+2
+2
+
+4.Modify Class Variable Using @classmethod
+class Hospital:
+ hospital_name = "City Hospital"
+
+    @classmethod
+    def update_name(cls, new_name):
+        cls.hospital_name = new_name
+
+
+h1 = Hospital()
+h2 = Hospital()
+
+Hospital.update_name("Metro Hospital")
+
+print(h1.hospital_name)
+print(h2.hospital_name)
+
+OUTPUT
+Metro Hospital
+Metro Hospital
+
+5.Private Class Variable
+class Bank:
+    __ifsc_code = "SBIN0001234"
+
+    @classmethod
+    def get_ifsc(cls):
+        return cls.__ifsc_code
+
+
+print(Bank.get_ifsc())
+
+OUTPUT
+SBIN0001234
