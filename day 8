@@ -1,0 +1,139 @@
+1.MINI E-COMMERCE SYSTEM
+  from abc import ABC, abstractmethod
+
+class Product(ABC):
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
+
+    @abstractmethod
+    def get_discounted_price(self):
+        pass
+
+
+class Electronics(Product):
+    def get_discounted_price(self):
+        return self.price * 0.9
+
+
+class Clothing(Product):
+    def get_discounted_price(self):
+        return self.price * 0.8
+
+
+class Cart:
+    def __init__(self):
+        self.items = []
+
+    def add_product(self, product):
+        self.items.append(product)
+
+    def total(self):
+        return sum(item.get_discounted_price() for item in self.items)
+
+
+cart = Cart()
+cart.add_product(Electronics("Laptop", 1000))
+cart.add_product(Clothing("Shirt", 100))
+
+print("Total:", cart.total())
+
+OUTPUT
+Total: 980.0
+
+2.ACCOUNT MANAGEMENT SYSTEM
+  from datetime import datetime
+
+
+class BankAccount:
+    bank_name = "Global Bank"
+
+    def __init__(self, owner, balance=0):
+        self.owner = owner
+        self.__balance = balance
+        self.created_at = datetime.now()
+
+    def get_balance(self):
+        return self.__balance
+
+    def deposit(self, amount):
+        if amount <= 0:
+            raise ValueError("Deposit must be positive")
+        self.__balance += amount
+        print(f"{amount} deposited successfully.")
+
+    def withdraw(self, amount):
+        if amount > self.__balance:
+            raise ValueError("Insufficient funds")
+        self.__balance -= amount
+        print(f"{amount} withdrawn successfully.")
+
+    def change_bank_name(cls, new_name):
+        cls.bank_name = new_name
+
+    def is_valid_amount(amount):
+        return amount > 0
+
+    def __str__(self):
+        return f"{self.owner} - Balance: {self.__balance}"
+
+if __name__ == "__main__":
+    acc1 = BankAccount("Alice", 1000)
+    acc2 = BankAccount("Bob", 500)
+
+    print("Bank Name:", BankAccount.bank_name)
+
+    acc1.deposit(200)
+    acc1.withdraw(100)
+
+    print(acc1)
+    print(acc2)
+
+    print("Alice Balance:", acc1.get_balance())
+
+    BankAccount.change_bank_name("International Bank")
+    print("Updated Bank Name:", BankAccount.bank_name)
+    print("Is 100 valid?", BankAccount.is_valid_amount(100))
+
+    OUTPUT
+    Bank Name: Global Bank
+    200 deposited successfully.
+    100 withdrawn successfully.
+    Alice - Balance: 1100
+    Bob - Balance: 500
+    Alice Balance: 1100
+    Updated Bank Name: International Bank
+    Is 100 valid? True
+
+  3.FILE MANAGER
+    class FileManager:
+    def __init__(self, filename, mode):
+        self.filename = filename
+        self.mode = mode
+        self.file = None
+
+    def __enter__(self):
+        print("Opening file...")
+        self.file = open(self.filename, self.mode)
+        return self.file
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        print("Closing file...")
+        if self.file:
+            self.file.close()
+
+        if exc_type:
+            print("An error occurred:", exc_val)
+
+        return False
+
+if __name__ == "__main__":
+    with FileManager("test.txt", "w") as f:
+        f.write("Hello World")
+
+    print("File operation completed.")
+
+  OUTPUT
+  Opening file...
+  Closing file...
+  File operation completed.
