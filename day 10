@@ -1,0 +1,43 @@
+1.REVERSING THE STRING
+def reverse_string(s):
+    return s[::-1]
+print(reverse_string("hello"))  
+
+Output: olleh
+
+2.CHECK WHETHER THE NUM IS PRIME OR NOT
+def is_prime(n):
+    if n <= 1:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+print(is_prime(7))  
+
+Output: True
+
+3.FIBBONACCI SERIES
+def fibonacci(n):
+    a, b = 0, 1
+    for _ in range(n):
+        print(a, end=" ")
+        a, b = b, a + b
+fibonacci(5)  
+
+Output: 0 1 1 2 3
+
+4. FIND THE LARGEST NUM
+def find_largest(lst):
+    return max(lst)
+print(find_largest([3, 7, 2, 9, 5]))  
+
+Output: 9
+
+5.COUNT THE VOWELS IN STRING
+def count_vowels(s):
+    vowels = "aeiouAEIOU"
+    return sum(1 for char in s if char in vowels)
+print(count_vowels("hello world")) 
+
+Output: 3
