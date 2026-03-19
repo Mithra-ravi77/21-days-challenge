@@ -1,0 +1,81 @@
+1. CHECK AMSTRONG NUMBER
+  num = int(input("Enter a number: "))
+temp = num
+sum = 0
+
+while num > 0:
+    digit = num % 10
+    sum = sum + digit**3
+    num = num // 10
+
+if temp == sum:
+    print("Armstrong Number")
+else:
+    print("Not an Armstrong Number")
+
+  OUTPUT
+Enter a number: 27
+Not an Armstrong Number
+
+2. CHECK THE LEAP YEAR
+ year = int(input("Enter a year: "))
+
+if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+    print("Leap Year")
+else:
+    print("Not a Leap Year")
+
+  OUTPUT
+  Enter a year: 2027
+Not a Leap Year
+
+3.FIND LCM OF TWO NUMBERS
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+
+if a > b:
+    greater = a
+else:
+    greater = b
+
+while True:
+    if greater % a == 0 and greater % b == 0:
+        lcm = greater
+        break
+    greater += 1
+
+print("LCM =", lcm)
+
+OUTPUT
+  Enter first number: 6
+  Enter second number: 8
+  LCM = 24
+
+
+4.FIND GCD OF TWO NUMBERS
+    a = int(input("Enter first number: "))
+    b = int(input("Enter second number: "))
+
+while b != 0:
+    a, b = b, a % b
+
+print("GCD is:", a)
+
+OUTPUT
+    Enter first number: 7
+    Enter second number: 8
+    GCD is: 1
+
+5.FIND THE SQUARE ROOT OF THE LIST
+  numbers = [1,2,3,4,5]
+
+squares = []
+
+for n in numbers:
+    squares.append(n*n)
+
+print("Squares:", squares)
+
+OUTPUT
+    Squares: [1, 4, 9, 16, 25]
+
