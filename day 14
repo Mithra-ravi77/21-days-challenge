@@ -1,0 +1,73 @@
+1.ELECTRICITY BILL CALCULATOR
+Problem:
+Calculate the electricity bill based on units consumed.
+
+Rules:
+
+1.0–100 units → ₹2 per unit
+
+2.101–200 units → ₹3 per unit
+
+3.Above 200 units → ₹5 per unit
+
+  units = int(input("Enter electricity units consumed: "))
+if units <= 100:
+    bill = units * 2
+elif units <= 200:
+    bill = (100 * 2) + (units - 100) * 3
+else:
+    bill = (100 * 2) + (100 * 3) + (units - 200) * 5
+
+print("Total Electricity Bill = ₹", bill)
+
+  OUTPUT
+      Enter electricity units consumed: 500
+      Total Electricity Bill = ₹ 2000
+
+
+2.STUDENT GRADE CALCULATOR
+Problem:
+Calculate grade based on marks.
+
+Rules:
+
+90–100 → A
+
+70–89 → B
+
+50–69 → C
+
+Below 50 → Fail
+
+PROGRAM
+  marks = int(input("Enter student marks: "))
+
+if marks >= 90:
+    print("Grade: A")
+elif marks >= 70:
+    print("Grade: B")
+elif marks >= 50:
+    print("Grade: C")
+else:
+    print("Fail")
+
+OUTPUT
+  Enter student marks: 45
+  Fail
+
+3. Temperature Converter 
+
+Problem:
+Convert Celsius to Fahrenheit
+
+  PROGRAM
+  celsius = float(input("Enter temperature in Celsius: "))
+
+fahrenheit = (celsius * 9/5) + 32
+
+print("Temperature in Fahrenheit:", fahrenheit)
+
+OUTPUT
+Enter temperature in Celsius: 60
+Temperature in Fahrenheit: 140.0
+
