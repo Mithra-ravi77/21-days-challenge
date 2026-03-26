@@ -1,0 +1,130 @@
+def load_tasks(filename):
+    try:
+        with open(filename, "r") as file:
+            tasks = file.readlines()
+            return [task.strip() for task in tasks]
+    except FileNotFoundError:
+        return []
+
+
+def save_tasks(filename, tasks):
+    with open(filename, "w") as file:
+        for task in tasks:
+            file.write(task + "\n")
+
+
+def show_tasks(tasks):
+    if not tasks:
+        print("\nNo tasks found.")
+    else:
+        print("\nYour Tasks:")
+        for i, task in enumerate(tasks, start=1):
+            print(f"{i}. {task}")
+
+
+def add_task(tasks):
+    task = input("Enter new task: ")
+    tasks.append(task)
+    print("Task added!")
+
+
+def remove_task(tasks):
+    show_tasks(tasks)
+    try:
+        num = int(input("Enter task number to remove: "))
+        if 1 <= num <= len(tasks):
+            removed = tasks.pop(num - 1)
+            print(f"Removed: {removed}")
+        else:
+            print("Invalid number.")
+    except ValueError:
+        print("Please enter a valid number.")
+
+
+def main():
+    filename = "tasks.txt"
+    tasks = load_tasks(filename)
+
+    while True:
+        print("\n--- TO-DO LIST ---")
+        print("1. Show tasks")
+        print("2. Add task")
+        print("3. Remove task")
+        print("4. Save and Exit")
+
+        choice = input("Choose an option: ")
+
+        if choice == "1":
+            show_tasks(tasks)
+        elif choice == "2":
+            add_task(tasks)
+        elif choice == "3":
+            remove_task(tasks)
+        elif choice == "4":
+            save_tasks(filename, tasks)
+            print("Tasks saved. Goodbye!")
+            break
+        else:
+            print("Invalid choice. Try again.")
+
+
+if __name__ == "__main__":
+    main()
+
+OUTPUT
+1. Show tasks
+2. Add task
+3. Remove task
+4. Save and Exit
+Choose an option: 2
+Enter new task: working
+Task added!
+
+2.PASSWORD GENERATOR
+  import random
+import string
+
+def generate_password(length):
+    letters = string.ascii_letters
+    digits = string.digits
+    symbols = string.punctuation
+
+    all_characters = letters + digits + symbols
+
+    password = ''.join(random.choice(all_characters) for _ in range(length))
+    return password
+
+
+def main():
+    print("=== PASSWORD GENERATOR ===")
+
+    while True:
+        try:
+            length = int(input("Enter password length: "))
+            if length < 4:
+                print("Password length should be at least 4.")
+                continue
+
+            password = generate_password(length)
+            print(f"Generated Password: {password}")
+
+        except ValueError:
+            print("Please enter a valid number.")
+            continue
+
+        choice = input("Generate another password? (y/n): ").lower()
+        if choice != 'y':
+            print("DONE!!!")
+            break
+
+
+if __name__ == "__main__":
+    main()
+
+OUTPUT
+  Enter password length: 6
+Generated Password: r^\F:1
+Generate another password? (y/n): 3R5YVF
+DONE!!!
+
+  
