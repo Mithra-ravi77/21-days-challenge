@@ -1,0 +1,156 @@
+1.CONTACT BOOK PROGRAM
+
+contacts = []
+
+def add_contact():
+    name = input("Enter name: ")
+    phone = input("Enter phone number: ")
+    contact = {"name": name, "phone": phone}
+    contacts.append(contact)
+    print("Contact added successfully!\n")
+
+def view_contacts():
+    if not contacts:
+        print("No contacts found.\n")
+    else:
+        print("\nContact List:")
+        for i, contact in enumerate(contacts, start=1):
+            print(f"{i}. {contact['name']} - {contact['phone']}")
+        print()
+
+def search_contact():
+    search_name = input("Enter name to search: ")
+    found = False
+    for contact in contacts:
+        if contact["name"].lower() == search_name.lower():
+            print(f"Found: {contact['name']} - {contact['phone']}\n")
+            found = True
+            break
+    if not found:
+        print("Contact not found.\n")
+
+def delete_contact():
+    name = input("Enter name to delete: ")
+    for contact in contacts:
+        if contact["name"].lower() == name.lower():
+            contacts.remove(contact)
+            print("Contact deleted successfully!\n")
+            return
+    print("Contact not found.\n")
+
+def menu():
+    while True:
+        print("=== Contact Book ===")
+        print("1. Add Contact")
+        print("2. View Contacts")
+        print("3. Search Contact")
+        print("4. Delete Contact")
+        print("5. Exit")
+
+        choice = input("Enter your choice: ")
+
+        if choice == "1":
+            add_contact()
+        elif choice == "2":
+            view_contacts()
+        elif choice == "3":
+            search_contact()
+        elif choice == "4":
+            delete_contact()
+        elif choice == "5":
+            print("Exiting program...")
+            break
+        else:
+            print("Invalid choice, try again.\n")
+
+menu()
+
+OUTPUT
+1. Add Contact
+2. View Contacts
+3. Search Contact
+4. Delete Contact
+5. Exit
+Enter your choice: 1
+Enter name: mithra
+Enter phone number: 9457304572
+Contact added successfully!
+
+
+2.Student Marks Manager (with File Handling)
+  import json
+
+FILENAME = "students.json"
+
+def load_data():
+    try:
+        with open(FILENAME, "r") as file:
+            return json.load(file)
+    except FileNotFoundError:
+        return []
+
+def save_data(data):
+    with open(FILENAME, "w") as file:
+        json.dump(data, file, indent=4)
+
+def add_student(data):
+    name = input("Enter student name: ")
+    marks = int(input("Enter marks: "))
+    student = {"name": name, "marks": marks}
+    data.append(student)
+    save_data(data)
+    print("Student added successfully!\n")
+
+def view_students(data):
+    if not data:
+        print("No records found.\n")
+    else:
+        print("\nStudent Records:")
+        for i, student in enumerate(data, start=1):
+            print(f"{i}. {student['name']} - {student['marks']}")
+        print()
+
+def find_topper(data):
+    if not data:
+        print("No data available.\n")
+    else:
+        topper = max(data, key=lambda x: x["marks"])
+        print(f"Topper: {topper['name']} with {topper['marks']} marks\n")
+
+def menu():
+    data = load_data()
+
+    while True:
+        print("=== Student Manager ===")
+        print("1. Add Student")
+        print("2. View Students")
+        print("3. Find Topper")
+        print("4. Exit")
+
+        choice = input("Enter your choice: ")
+
+        if choice == "1":
+            add_student(data)
+        elif choice == "2":
+            view_students(data)
+        elif choice == "3":
+            find_topper(data)
+        elif choice == "4":
+            print("Exiting program...")
+            break
+        else:
+            print("Invalid choice!\n")
+
+menu()
+
+OUTPUT
+1. Add Student
+2. View Students
+3. Find Topper
+4. Exit
+Enter your choice: 1
+Enter student name: MITHRA
+Enter marks: 90
+
+
+              
