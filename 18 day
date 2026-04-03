@@ -1,0 +1,65 @@
+1.class Student:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def display(self):
+        print("Name:", self.name)
+        print("Age:", self.age)
+
+student1 = Student("Arun", 20)
+student2 = Student("Priya", 19)
+student1.display()
+print("-----")
+student2.display()
+
+output
+Name: Arun
+Age: 20
+-----
+Name: Priya
+Age: 19
+
+2.class BankAccount:
+    def __init__(self, balance):
+        self.__balance = balance 
+
+    def deposit(self, amount):
+        self.__balance += amount
+
+    def show_balance(self):
+        print("Balance:", self.__balance)
+
+acc = BankAccount(1000)
+
+acc.deposit(500)
+acc.show_balance()
+
+print(acc.__balance)
+
+output
+Balance: 1500
+
+3.from abc import ABC, abstractmethod
+class Vehicle(ABC):
+
+    def start(self):
+        pass
+
+class Car(Vehicle):
+    def start(self):
+        print("Car starts with key")
+
+class Bike(Vehicle):
+    def start(self):
+        print("Bike starts with kick")
+
+c = Car()
+b = Bike()
+
+c.start()
+b.start()
+
+output
+Car starts with key
+Bike starts with kick
